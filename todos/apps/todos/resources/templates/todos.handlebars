@@ -5,8 +5,19 @@
 {{/view}}
 
 {{#collection "Todos.todoListView"}}
-  {{#view "Todo.CheckboxView"}}
+  {{#view "Todos.CheckboxView"}}
     <input class="check" type="checkbox"/>
   {{/view}}
   <div class='todo-content'>{{content/title}}</div>
 {{/collection}}
+
+{{#view "Todos.statsView"}}
+  <span class="remaining">{{bind "displayRemaining"}} remaining.</span>
+  {{#view "Todos.clearCompletedView"}}
+    <button>Clear Completed Todos</button>
+  {{/view}}
+{{/view}}
+
+{{#view "Todos.markAllDoneView"}}
+  <input class="mark-all-done" type="checkbox"> Mark All as Done
+{{/view}}
